@@ -1,0 +1,289 @@
+:root {
+  --primary-color: #2b6777;
+  --secondary-color: #52b788;
+  --accent-color: #ff5c5c;
+  --font-family: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.navbar {
+  background-color: var(--primary-color);
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+.navbar .brand {
+  color: white;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .nav-toggle {
+  display: none; /* Make sure the button is visible */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.navbar .nav-toggle .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+}
+
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin-left: 20px;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: var(--secondary-color); /* Or any color you want for hover effect */
+}
+
+
+@media (max-width: 768px) {
+  .navbar .nav-toggle {
+      display: block; /* Ensure button is displayed in mobile view */
+  }
+
+  .navbar .nav-links {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      z-index: 6;
+  }
+
+  .navbar .nav-links.active {
+      display: flex;
+  }
+
+  .navbar .nav-links li {
+      margin: 0;
+      text-align: center;
+      padding: 10px 0;
+  }
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  /* background: linear-gradient(135deg, #a2c2e0, #e0f7fa, #b9fbc0); Lighter gradient colors */
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9K0mkJIgeH-JW7VRj0pyZqSNBeUB-UXB6_VhU-8CN5NhtmRStrBVpPn4&s=10");
+  /* background-size: contain; */
+  color: #333; /* Dark text for contrast */
+  position: relative;
+  text-align: center;
+  padding: 0 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5); /* Light white overlay */
+  z-index: 0;
+  /* filter: blur(4px); Less blur for better readability */
+}
+
+.cta-button {
+  background-color: #82c590; /* Light button color * /
+  /* background-image: url("https://media.istockphoto.com/id/1393379238/photo/work-performance-is-influenced-by-skills-abilities-and-competence-the-concept-of-the.jpg?s=612x612&w=0&k=20&c=JmF3ow_Nn1jLVsjVWSmrCgBpJhJ3FnxX2rVIxWlO68Q="); */
+  padding: 12px 24px;
+  border-radius: 50px;
+  color: #333; /* Dark text on button */
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 1.2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.34); /* Subtle shadow */
+  position: relative;
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+}
+
+.cta-button:hover {
+  background-color: #a2c2e0; /* Slightly darker button color on hover */
+  transform: scale(1.05); /* Slight scale effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+  
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Mobile first approach */
+@media (max-width: 768px) {
+  .hero {
+      height: auto;
+      padding: 60px 20px;
+      text-align: center;
+  }
+
+  .hero-content h1 {
+      font-size: 2em;
+  }
+
+  .hero-content p {
+      font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+      font-size: 2em;
+  }
+
+  .hero-content p {
+      font-size: 0.9em;
+  }
+}
+
+
+.jobs-section, .alumni-section, .learning-section, .startups-section {
+  padding: 60px 0;
+  text-align: center;
+  
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.553);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card:hover{
+  position: relative;
+  transform: scale(1.02);
+  transition: transform 0.1s ease;
+  cursor: pointer;
+
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--primary-color);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      z-index: 1;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      margin: 0;
+      text-align: center;
+      padding: 10px 0;
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+}
+
+
+
+  aside .icon1 {
+    width: 12%;
+    height: 10vw;
+    /* padding: 10px; */
+    margin-left: 20px;
+    background-color: #f9f9f9;
+    background-image: url('https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hcmtldGluZyUyMGNvb3JlZGluYXRvcnxlbnwwfHwwfHx8MA%3D%3D');
+    
+    border-left: 2px solid #ccc;
+    float: left;
+    position: relative;
+    top: 15px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    }
+  

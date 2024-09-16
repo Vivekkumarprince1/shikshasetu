@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <style>
+    
+    </style>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <%- include('partials/header')%>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Empower Your Career</h1>
+            <p>Connecting talent with opportunity through innovation.</p>
+            <a href="#jobs-internships" class="cta-button">Explore Opportunities</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </header>
+    <!-- Main Sections -->
+    <main>
+        <!-- Jobs and Internships Section -->
+        <section id="jobs-internships" class="jobs-section">
+            <div class="container">
+                <h2>Your Next Job Awaits</h2>
+                <p>Personalized job matches across industries. Find your dream job or internship by browsing through our curated listings.</p>
+                <div class="job-listings">
+                    <div class="card">
+                        <aside>
+                        <div class="icon"></div>
+                        </aside>
+                        <h3>Software Engineer Intern</h3>
+                        <p>Join a leading tech company as a software engineering intern. Gain hands-on experience and work on exciting projects.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </div>
+                    <div class="card">
+                        <aside></aside>
+                            <div class="icon1">
+    
+                            </div>
+                            </aside>
+                        <h3>Marketing Coordinator</h3>
+                        <p>Assist in developing marketing strategies and campaigns for a dynamic startup. Ideal for creative minds with a passion for marketing.</p>
+                        <a href="#" class="cta-button">Apply Now</a>
+                    </div>
+                    <a href="job" class="cta-button">see more</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Alumni Interaction Section -->
+        <section id="alumni-interaction" class="alumni-section">
+            <div class="container">
+                <h2>Engage with Alumni</h2>
+                <p>Connect with mentors, gain insights, and build valuable professional relationships. Participate in discussions and career guidance sessions.</p>
+                <div class="alumni-interactions">
+                    <div class="card">
+                        
+                        <h3>Mentorship Program</h3>
+                        <p>Join our mentorship program and get paired with experienced professionals in your field. Learn from their experiences and advance your career.</p>
+                        <a href="#" class="cta-button">Join Now</a>
+                    </div>
+                    <div class="card">
+                        <h3>Career Guidance Sessions</h3>
+                        <p>Attend career guidance sessions with industry experts. Get personalized advice and tips to navigate your career path effectively.</p>
+                        <a href="#" class="cta-button">Book a Session</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Path Section -->
+        <section id="learning-path" class="learning-section">
+            <div class="container">
+                <h2>Customize Your Learning</h2>
+                <p>Discover educational resources tailored to your goals. Track your progress and follow personalized learning paths to achieve your objectives.</p>
+                <div class="learning-resources">
+                    
+                    <div class="image"></div>
+                    <div class="card">
+                        <h3>Interactive Courses</h3>
+                        <p>Access a variety of interactive courses designed to enhance your skills. Participate in quizzes, assignments, and more.</p>
+                        <a href="#" class="cta-button">Browse Courses</a>
+                    </div>
+                    <div class="card">
+                        <h3>Progress Tracking</h3>
+                        <p>Monitor your learning progress with real-time updates. View statistics and adjust your learning path as needed.</p>
+                        <a href="#" class="cta-button">View Progress</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Startup Section -->
+        <section id="startups" class="startups-section">
+            <div class="container">
+                <h2>Discover Startups</h2>
+                <p>Explore startup profiles, connect with investors and incubators, and get insights into the latest innovations. Find the support you need to grow your venture.</p>
+                <div class="startup-profiles">
+                    <div class="card">
+                        <h3>Innovative Tech Startup</h3>
+                        <p>Learn about a tech startup that's pushing boundaries in innovation. Connect with the founders and explore potential collaborations.</p>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </div>
+                    <div class="card">
+                        <h3>Sustainable Fashion Brand</h3>
+                        <p>Discover a fashion startup committed to sustainability. See how they're making an impact and explore investment opportunities.</p>
+                        <a href="#" class="cta-button">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 YourBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+
+    // Responsive Navbar Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    $(document).ready(function() {
+        $('.nav-toggle').on('click', function() {
+            $('.nav-links').toggleClass('active');
+            $('body').toggleClass('menu-open');
+        });
+    });
+    
+    // GSAP Animations
+    gsap.from(".hero-content h1", { duration: 1, y: 50, opacity: 0, ease: "power2.out" });
+    gsap.from(".hero-content p", { duration: 1, delay: 0.3, y: 50, opacity: 0, ease: "power2.out" });
+    gsap.from(".cta-button", { duration: 1, delay: 0.6, y: 50, opacity: 0, ease: "power2.out" });
+});
+
+    </script>
+</body>
+</html>

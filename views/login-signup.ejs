@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="stylesheets/loginstyle.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms-container">
+          <div class="form-control signup-form">
+            <form action="/signup" method="post">
+              <h2>Signup</h2>
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input type="text" name="username" placeholder="User name" required=""> <!-- Fix name from 'txt' to 'username' -->
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="number" name="mobile" placeholder="Mobile" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+                <button>Sign up</button>
+            </form>
+            <span>or signup with</span>
+            <div class="socials">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+          <div class="form-control signin-form">
+            <form action="/login" method="post">
+              <h2>Signin</h2>
+                <label for="chk" aria-hidden="true">Login</label>
+                <input type="email" name="email" placeholder="Email" required="">
+                <input type="password" name="password" placeholder="Password" required="">
+
+                <button>Login</button>
+            </form>
+            <span>or signin with</span>
+            <div class="socials">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-google-plus-g"></i>
+              <i class="fab fa-linkedin-in"></i>
+            </div>
+          </div>
+        </div>
+        <div class="intros-container">
+          <div class="intro-control signin-intro">
+            <div class="intro-control__inner">
+              <h2>Welcome back!</h2>
+              <p>
+                Welcome back! We are so happy to have you here. It's great to see you again. We hope you had a safe and enjoyable time away.
+              </p>
+              <button id="signup-btn">No account yet? Signup.</button>
+            </div>
+          </div>
+          <div class="intro-control signup-intro">
+            <div class="intro-control__inner">
+              <h2>Come join us!</h2>
+              <p>
+                We are so excited to have you here.If you haven't already, create an account to get access to exclusive offers, rewards, and discounts.
+              </p>
+              <button id="signin-btn">Already have an account? Signin.</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <script>
+        const signupBtn = document.getElementById("signup-btn");
+const signinBtn = document.getElementById("signin-btn");
+const mainContainer = document.querySelector(".container");
+
+signupBtn.addEventListener("click", () => {
+  mainContainer.classList.toggle("change");
+});
+signinBtn.addEventListener("click", () => {
+  mainContainer.classList.toggle("change");
+});
+      </script>
+
+</body>
+</html>

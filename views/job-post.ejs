@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Job Postings</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css/animate.min.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <style>
+        :root {
+            --primary-color: #2b6777;
+            --secondary-color: #52b788;
+            --accent-color: #ff5c5c;
+            --font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            font-family: var(--font-family);
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .job-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 0;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            color: var(--primary-color);
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .job-section {
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .job-section h2 {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header')%>
+    <!-- Job Listings Section -->
+    <section class="job-section">
+        <div class="container">
+            <h2>Technical Job Postings for Engineers</h2>
+            <div class="job-listings">
+                <!-- Job 1 -->
+                <div class="card">
+                    <h3>Software Engineer - Backend</h3>
+                    <p>Join our fast-growing team to design and implement scalable backend services. Work with cutting-edge technologies like Node.js, AWS, and Docker.</p>
+                    <p><strong>Location:</strong> Remote</p>
+                    <p><strong>Experience:</strong> 2-5 years</p>
+                    <button class="cta-button" onclick="job1()">Apply Now</button>
+                    <script>
+                        const job1 = () => {
+                            const jobID = "66e728a74066d7ede55c29e1";
+                            window.location.href = `/apply/${jobID}`;
+                        };
+
+                    </script>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="card">
+                    <h3>Frontend Engineer - React.js</h3>
+                    <p>Looking for a creative frontend developer with expertise in React.js to build responsive user interfaces. Collaborate closely with design and backend teams.</p>
+                    <p><strong>Location:</strong> San Francisco, CA</p>
+                    <p><strong>Experience:</strong> 3+ years</p>
+                    <a href="/apply?jobId=2" class="cta-button">Apply Now</a>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="card">
+                    <h3>DevOps Engineer</h3>
+                    <p>We are searching for a skilled DevOps engineer to improve and maintain CI/CD pipelines and cloud infrastructure. Experience with Kubernetes is a plus.</p>
+                    <p><strong>Location:</strong> New York, NY</p>
+                    <p><strong>Experience:</strong> 4+ years</p>
+                    <a href="/apply?jobId=3" class="cta-button">Apply Now</a>
+                </div>
+                
+                <!-- Job 4 -->
+                <div class="card">
+                    <h3>Data Scientist</h3>
+                    <p>Use your data science expertise to analyze large datasets, build predictive models, and help make data-driven decisions. Proficiency in Python and machine learning required.</p>
+                    <p><strong>Location:</strong> Austin, TX</p>
+                    <p><strong>Experience:</strong> 2+ years</p>
+                    <button class="cta-button" onclick="job4()">Apply Now</button>
+                    <script>
+                        const job4 = () => {
+                            const jobID = "job-4";
+                            const queryString = `JobID=${jobID}`;
+                            window.location.href = `/apply?${queryString}`;
+                        };
+                    </script>
+                </div>
+
+                <!-- Job 5 -->
+                <div class="card">
+                    <h3>Full Stack Developer</h3>
+                    <p>We are hiring a full stack engineer to build web applications from the ground up. Must be proficient in both frontend and backend technologies.</p>
+                    <p><strong>Location:</strong> London, UK</p>
+                    <p><strong>Experience:</strong> 3-6 years</p>
+                    <a href="/apply?jobId=5" class="cta-button">Apply Now</a>
+                </div>
+
+                <!-- Job 6 -->
+                <div class="card">
+                    <h3>Machine Learning Engineer</h3>
+                    <p>Looking for a talented ML engineer to develop algorithms and work on AI projects. Knowledge of TensorFlow and deep learning is essential.</p>
+                    <p><strong>Location:</strong> Toronto, Canada</p>
+                    <p><strong>Experience:</strong> 3+ years</p>
+                    <a href="/apply?jobId=6" class="cta-button">Apply Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 YourBrand. All rights reserved.</p>
+    </footer>
+</body>
+</html>
