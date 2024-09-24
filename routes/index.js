@@ -7,10 +7,17 @@ const multer = require('multer');
 const path = require('path');
 const passport = require('passport');
 const User = require('../models/user');
-const { generateToken } = require('../utils/jwt');
 const bcrypt = require('bcryptjs');
-const { req } = require('http');
 const { token } = require('morgan');
+const jwt = require('jsonwebtoken');
+
+const generateToken = (user) => {
+    return jwt.sign({ id: user.id, email: user.email }, process.env.JWT_SECRET, { expiresIn: '1h' });
+};
+
+const verifyToken = (token) => {
+    return jwt.verify(token, process.env.JWT_SECRET);
+};
 
 
 // Set up storage for uploaded files
@@ -72,8 +79,6 @@ router.get('/profile', ensureAuthenticated, (req, res) => {
 
 
 
-
-
 router.get('/job', function(req, res, next) {
   res.render('job-post');
 });
@@ -118,23 +123,26 @@ router.get('/apply/:id', async (req, res) => {
 // POST: Submit a Job Application
 router.post('/apply', upload.single('resume'), async (req, res) => {
   try {
-      const { name, email, jobId } = req.body; // Fetch jobId from req.body
+      const { name, email, jobId } = req.body;
+      if (!req.file) {
+          return res.status(400).send('Resume is required');
+      }
 
-      // Create new job application
       const newApplication = new Application({
           name,
           email,
-          resume: req.file.filename, // Resume file path
+          resume: req.file.filename, 
           jobId
       });
 
       await newApplication.save();
-      res.redirect('/'); // Redirect after success
+      res.redirect('/');
   } catch (err) {
       console.error(err);
       res.status(500).send('Error submitting application');
   }
 });
+
 
 
 // Register Route
