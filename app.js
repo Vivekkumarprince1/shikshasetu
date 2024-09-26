@@ -25,11 +25,15 @@ app.use(express.static('public'));
 
 // ** Fix for the express-session deprecation warning **
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'defaultsecret',
-    resave: false,
-    saveUninitialized: false,
-    cookie: { secure: false, maxAge: 360000000 }
+  secret: process.env.SESSION_SECRET || 'defaultsecret',
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+      secure: process.env.NODE_ENV === 'production', // Set secure cookies in production
+      maxAge: 1000 * 60 * 60 * 24 // 1 day
+  }
 }));
+
 
 app.use(passport.initialize());
 app.use(passport.session());
