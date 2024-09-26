@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="hero">
+    <div class="container">
+        <h1>Welcome to My Portfolio</h1>
+        <p>This is a brief description of my portfolio website.</p>
+        <button class="btn btn-primary">Learn More</button>
+    </div>
+</header>
+
+<section id="featured-projects" class="section">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="card" data-aos="fade-up">
+                <!-- <img src="http://www.fmpg.in" alt="Project 1"> -->
+                <iframe src="http://www.fmpg.in" frameborder="0"></iframe>
+                <h3>Project fmpg</h3>
+                <p><b>FMPG</b> is a hostel/PG management platform built with Node.js, MongoDB, and EJS for booking and property management solutions.</p>
+                <a href="http://www.fmpg.in" class="btn btn-primary">View Project</a>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <!-- <img src="images/project2.jpg" alt="Project 2"> -->
+                <iframe src="http://www.fmpg.in" frameborder="0"></iframe>
+                <h3>Project 2</h3>
+                <p>A brief description of Project 2.</p>
+                <button class="btn btn-primary">View Project</button>
+            </div>
+            <div class="card" data-aos="fade-up">
+                <!-- <img src="images/project3.jpg" alt="Project 3"> -->
+                <iframe src="http://www.fmpg.in" frameborder="0"></iframe>
+                <h3>Project 3</h3>
+                <p>A brief description of Project 3.</p>
+                <button class="btn btn-primary">View Project</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="section">
+    <div class="container">
+        <h2>My Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card" data-aos="fade-up">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Proficient in modern web development tools and techniques.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design</h3>
+                <p>Expertise in visual design and branding.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up">
+                <i class="fas fa-camera"></i>
+                <h3>Photography</h3>
+                <p>Skilled in capturing high-quality images.</p>
+            </div>
+            <div class="skill-card" data-aos="fade-up">
+                <i class="fas fa-video"></i>
+                <h3>Videography</h3>
+                <p>Professional video editing and production.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Add a section for Contact Us -->
+<!-- Add a Contact Us section with social media icons -->
+<section id="contact" class="section">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Connect with us on social media!</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/yourprofile" target="_blank" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/yourwhatsappnumber" target="_blank" class="social-link">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/yourprofile" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Font Awesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+</script>
+</body>
+</html>

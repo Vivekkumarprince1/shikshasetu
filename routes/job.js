@@ -40,7 +40,7 @@ router.get('/jobs/:id', async (req, res) => {
 });
 
 // Route to add a new job posting
-router.get('/jobs', async (req, res) => {
+router.get('/createjobs', async (req, res) => {
     // const { title, description, location, experience } = req.body;
     console.log("aa gye");
     try {
