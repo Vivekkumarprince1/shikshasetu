@@ -72,9 +72,9 @@ passport.serializeUser((user, done) => {
 
 // Routes
 app.use('/', require('./routes/index'));
-app.use('/users', require('./routes/users'));
+// app.use('/users', require('./routes/users'));
 app.use('/apply',applyroutes);
-app.use('/job', postRoutes);
+// app.use('/job', postRoutes);
 
 
 // Set the port and start the server
